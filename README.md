@@ -198,7 +198,7 @@ Edit `config.json` to customize:
 }
 ```
 
-## Memory Optimization Tips for Colab
+## Memory Optimization Tips 
 
 1. **Process slices sequentially** instead of loading full 3D volumes
 2. **Use float32** instead of float64 for MRI data
@@ -234,5 +234,6 @@ Edit `config.json` to customize:
 ## License
 
 Research use only. Not approved for clinical use.
+
 
 
