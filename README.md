@@ -26,10 +26,6 @@ A fully autonomous AI-powered system for optimizing neural electrode geometry ba
 
 2. **Launch the GUI Application**
    ```bash
-   python launch_gui.py
-   ```
-   Or:
-   ```bash
    python gui_main.py
    ```
 
@@ -43,7 +39,7 @@ A fully autonomous AI-powered system for optimizing neural electrode geometry ba
 ### Option 2: Command Line Interface
 
 ```bash
-python agent_main.py --displacement-mm 120 --patient-id subject_01 --mri-image t1w.nii
+python agent_main.py --displacement-mm 120 --patient-id subject_mri --mri-image t1w.nii
 ```
 
 ### Option 3: Python API
@@ -69,6 +65,7 @@ print(results['final_recommendations'])
 3. Run the Python API code above
 
 ## System Architecture
+
 <img width="941" height="511" alt="optimizer_agent" src="https://github.com/user-attachments/assets/1ead50ac-ec9c-4278-8eb0-2194e9821e79" />
 
 ### Pipeline Stages
@@ -235,6 +232,7 @@ Edit `config.json` to customize:
 ## License
 
 Research use only. Not approved for clinical use.
+
 
 
 
