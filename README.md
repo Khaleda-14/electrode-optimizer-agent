@@ -12,7 +12,7 @@ A fully autonomous AI-powered system for optimizing neural electrode geometry ba
 **Real-Time Progress Tracking**: Visual progress indicators and status updates during analysis  
 **Results Visualization**: Automatic display of electrode geometry plots and threshold graphs  
 **Export Functionality**: Save results to JSON format for further analysis  
-**Memory-Efficient**: Optimized for Google Colab with memory constraints (< 4GB RAM usage)  
+**Memory-Efficient**: Optimized for memory constraints (< 4GB RAM usage)  
 **Clinical-Grade Output**: Generates comprehensive electrode geometry specifications (Area (mm²), Pitch (mm))  
 
 ## Quick Start
@@ -107,13 +107,13 @@ print(results['final_recommendations'])
 ## Pretrained Model & Dataset Format
 
 - `pretrained_ann.h5`  
-  - Input: `[Displacement(mm), Area(mm), Pitch(mm)]`  
-  - Output: `Threshold Current (mA)`  
+  - Input: `[Displacement(um), Area(um^2), Pitch(um)]`  
+  - Output: `Threshold Current (uA)`  
   - Format: TensorFlow/Keras `.h5` or `.keras`
 
 - `augmented_data_full.csv`  
   ```
-  Displacement(mm), Area(mm), Pitch(mm), Threshold-Current(mA)
+  Displacement(um), Area(um^2), Pitch(um), Threshold-Current(uA)
   ```
   These bounds are ingested automatically to keep GA searches inside the ANN's training regime. The GA objective converts the ANN output to microamps and minimizes the absolute error to the target 45 µA.
 
@@ -163,10 +163,10 @@ Edit `config.json` to customize:
   "target_mri_resolution": 2.0,
   "n_representative_slices": 5,
   "electrode_constraints": {
-    "min_pitch_mm": 0.0,
-    "max_pitch_mm": 1000.0,
-    "min_area_mm": 0.0,
-    "max_area_mm": 2000.0
+    "min_pitch_um": 50.0,
+    "max_pitch_um": 1000.0,
+    "min_area_um": 100.0,
+    "max_area_um": 10000.0
   },
   "safety_thresholds": {
     "target_threshold_uA": 45.0,
@@ -218,20 +218,7 @@ Edit `config.json` to customize:
 - Check file path in `config.json`
 
 ### CSV Data Not Found
-- Create sample data: agent will auto-generate placeholder data
 - Ensure `augmented_data_full.csv` is uploaded
-
-## Citation
-
-If you use this system in your research, please cite:
-
-```bibtex
-@software{autonomous_electrode_agent,
-  title = {Autonomous AI Agent for Neuro-Electrode Geometry Optimization},
-  year = {2025},
-  note = {Neuro stimulation electrode optimization using multimodal AI}
-}
-```
 
 ## References
 
@@ -239,10 +226,6 @@ If you use this system in your research, please cite:
 - Human Connectome Project: https://www.humanconnectome.org
 - Fiber Data Hub (2025): https://brain.labsolver.org
 - MICA-MICs Dataset: https://github.com/MICA-MNI/micapipe
-
-**Electrode Optimization:**
-- Steigerwald et al. (2018): "Directional Deep Brain Stimulation"
-- Butson & McIntyre (2008): "Current steering to control DBS"
 
 **Multimodal AI:**
 - LLaVA-Med: https://github.com/microsoft/LLaVA-Med
@@ -252,9 +235,4 @@ If you use this system in your research, please cite:
 
 Research use only. Not approved for clinical use.
 
-## Support
 
-For issues or questions, please check:
-1. Configuration in `config.json`
-2. Memory usage logs
-3. Error messages in console output
