@@ -69,6 +69,7 @@ print(results['final_recommendations'])
 3. Run the Python API code above
 
 ## System Architecture
+<img width="941" height="511" alt="optimizer_agent" src="https://github.com/user-attachments/assets/1ead50ac-ec9c-4278-8eb0-2194e9821e79" />
 
 ### Pipeline Stages
 
@@ -234,6 +235,7 @@ Edit `config.json` to customize:
 ## License
 
 Research use only. Not approved for clinical use.
+
 
 
 
