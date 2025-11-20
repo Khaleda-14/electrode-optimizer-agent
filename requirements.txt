@@ -1,0 +1,11 @@
+numpy
+pandas
+nibabel
+tensorflow
+scikit-learn
+scikit-image
+deap
+matplotlib
+Pillow
+requests
+h5py

@@ -1,0 +1,26 @@
+{
+    "memory_limit_mb": 4096,
+    "cache_dir": "mri_cache",
+    "output_dir": "results",
+    
+    "pretrained_model_path": "pretrained_ann.h5",
+    "electrode_csv_path": "augmented_data_full.csv",
+    
+    "subject_mri_path": null,
+    "default_displacement_mm": 120.0,
+    
+    "target_mri_resolution": 2.0,
+    "n_representative_slices": 5,
+    
+    "electrode_constraints": {
+        "min_pitch_um": 50.0,
+        "max_pitch_um": 1000.0,
+        "min_area_um": 100.0,
+        "max_area_um": 10000.0
+    },
+    
+    "safety_thresholds": {
+        "target_threshold_uA": 45.0,
+        "max_error_uA": 5.0
+    }
+}
